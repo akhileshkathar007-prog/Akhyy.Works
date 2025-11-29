@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>akhyy.works</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Akhyy - video editor & shooter based in Chhatrapati Sambhajinagar." />
+  <style>
+    :root {
+      --bg: #050509;
+      --card: #0b0b11;
+      --text: #f5f5f5;
+      --muted: #9b9b9b;
+      --accent: #ffb447;
+      --border: rgba(255,255,255,0.06);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", sans-serif;
+      background: radial-gradient(circle at top, #131320 0, #050509 45%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .shell {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(11, 11, 17, 0.9);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #3cee8a;
+      box-shadow: 0 0 8px rgba(60, 238, 138, 0.7);
+    }
+
+    .card {
+      margin-top: 18px;
+      padding: 20px 18px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(7, 7, 12, 0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .name-block h1 {
+      font-size: 26px;
+      margin: 0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .name-block p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .headline {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .highlight {
+      color: var(--accent);
+    }
+
+    .sections {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 12px;
+    }
+
+    .box {
+      padding: 12px 12px 10px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(10, 10, 16, 0.98);
+    }
+
+    .box-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .box p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #dddddd;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .socials {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      font-size: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #11111c, #090912);
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        border-color 0.16s ease;
+    }
+
+    .socials a span {
+      font-size: 14px;
+      opacity: 0.75;
+    }
+
+    .socials a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    footer span {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 18px 16px 16px;
+      }
+
+      .top-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .name-block h1 {
+        font-size: 22px;
+      }
+
+      .sections {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 18px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="chip">
+      <div class="dot"></div>
+      <span>Available for shoots & edits</span>
+    </div>
+
+    <section class="card">
+      <div class="top-row">
+        <div class="name-block">
+          <h1>AKHYY</h1>
+          <p>video editing & shoots • Chhatrapati Sambhajinagar</p>
+        </div>
+        <div class="tag">akhyy.works</div>
+      </div>
+
+      <p class="headline">
+        I’m <span class="highlight">Akhyy</span> — I do
+        <span class="highlight">video editing</span> and
+        <span class="highlight">shoots</span> in and around
+        Chhatrapati Sambhajinagar.
+        Reels, short-form content, YouTube clips, events – sab ka jugad hai.
+      </p>
+
+      <div class="sections">
+        <div class="box">
+          <div class="box-title">What I do</div>
+          <p>
+            • Reels & Instagram content<br />
+            • Basic shoots (outdoor / indoor)<br />
+            • Short edits for creators & small brands
+          </p>
+          <div class="pill-row">
+            <span class="pill">video editing</span>
+            <span class="pill">shoots</span>
+            <span class="pill">reels</span>
+            <span class="pill">content</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Based in</div>
+          <p>
+            Chhatrapati Sambhajinagar, Maharashtra<br />
+            Available for local shoots & remote edits.
+          </p>
+        </div>
+      </div>
+
+      <div class="box" style="margin-top:14px;">
+        <div class="box-title">Work with me</div>
+        <p>
+          For inquiries, shoots or edits – just DM or ping on WhatsApp.
+        </p>
+        <div class="socials" style="margin-top:10px;">
+          <a href="https://instagram.com/akhyy.works" target="_blank">
+            <span>◎</span> Instagram: @akhyy.works
+          </a>
+          <a href="https://instagram.com/akhiilleshhh" target="_blank">
+            <span>◎</span> Instagram: @akhiilleshhh
+          </a>
+          <a href="https://wa.me/917218170719" target="_blank">
+            <span>✶</span> WhatsApp me
+          </a>
+          <a href="tel:+917218170719">
+            <span>✆</span> Call: +91 7218170719
+          </a>
+        </div>
+      </div>
+
+      <p class="contact-note">
+        Note: Number & WhatsApp yahan public hai – spam calls aa sakte hain,
+        so share only if you’re okay with that.
+      </p>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> akhyy.works</span>
+      <span>made on iphone.</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
