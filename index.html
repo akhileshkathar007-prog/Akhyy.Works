@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>akhyy.works — Akhilesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Akhilesh (akhyy.works) — video editing & shoots in Chhatrapati Sambhajinagar. Clean, punchy edits for creators & small brands."
+  />
+  <style>
+    :root {
+      --bg: #020308;
+      --bg-soft: #070814;
+      --card: #080813;
+      --card-soft: #0f0f1d;
+      --text: #f5f5f7;
+      --muted: #a2a2ad;
+      --accent: #f5c15c;
+      --accent-strong: #ff8a3c;
+      --border: rgba(255, 255, 255, 0.08);
+      --radius-xl: 28px;
+      --radius: 20px;
+      --radius-soft: 999px;
+      --shadow-soft: 0 26px 80px rgba(0, 0, 0, 0.9);
+      --blur: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, #25254a 0, transparent 55%),
+        radial-gradient(circle at 100% 0%, #171729 0, transparent 55%),
+        radial-gradient(circle at 50% 100%, #050510 0, #020308 60%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 22px 14px 32px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1040px;
+    }
+
+    /* NAV / BRAND */
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 30% 20%, #ffffff, #f5c15c 45%, #ff8a3c 80%);
+      box-shadow: 0 0 18px rgba(245, 193, 92, 0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text span:first-child {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .brand-text span:last-child {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .status-pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(6, 6, 14, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #32d07a;
+      box-shadow: 0 0 12px rgba(50, 208, 122, 0.9);
+    }
+
+    /* LAYOUT */
+
+    .grid-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 18px;
+    }
+
+    /* HERO LEFT */
+
+    .hero {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 26px 22px 22px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(245, 193, 92, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 138, 60, 0.2), transparent 60%),
+        linear-gradient(145deg, #090914, #05050c);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      backdrop-filter: blur(var(--blur));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.06),
+        transparent 30%,
+        transparent 70%,
+        rgba(0, 0, 0, 0.7)
+      );
+      mix-blend-mode: soft-light;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-sub {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-sub span {
+      color: var(--accent);
+    }
+
+    .hero-body {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    .hero-body .highlight {
+      color: var(--accent-strong);
+    }
+
+    .tags-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(6, 6, 14, 0.88);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+        border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn span.icon {
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f5c15c, #ff8a3c);
+      color: #120d06;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .btn-ghost {
+      background: rgba(5, 5, 12, 0.96);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 52px rgba(0, 0, 0, 0.9);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .hero-footer {
+      margin-top: 18px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* RIGHT SIDE */
+
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .logo-card {
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      background: radial-gradient(circle at 0 0, #171725, #05050b);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 22px;
+      padding: 14px;
+      background: radial-gradient(circle at 10% 0, #151524, #050509 60%);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+
+    .logo-inner img {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.9));
+    }
+
+    .logo-caption {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mini {
+      border-radius: var(--radius);
+      padding: 14px 14px 12px;
+      background: linear-gradient(145deg, rgba(12, 12, 24, 0.96), rgba(5, 5, 12, 0.98));
+      border: 1px solid var(--border);
+    }
+
+    .mini-title {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .mini p {
+      margin: 2px 0 6px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #e4e4ec;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .mini-tag {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+    }
+
+    /* BOTTOM STRIP */
+
+    .bottom-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .strip {
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      background: rgba(6, 6, 14, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .strip strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .chip-soft {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(245, 193, 92, 0.18);
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer span {
+      opacity: 0.9;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 780px) {
+      body {
+        padding: 18px 10px 26px;
+      }
+
+      .grid-main {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 22px 18px 18px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .hero-body {
+        font-size: 13px;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div class="brand-text">
+          <span>akhyy.works</span>
+          <span>Akhilesh — video studio</span>
+        </div>
+      </div>
+      <div class="status-pill">
+        <div class="status-dot"></div>
+        <span>available for shoots & edits</span>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <section class="grid-main">
+      <!-- LEFT: HERO -->
+      <article class="hero">
+        <div class="hero-inner">
+          <div class="eyebrow">portfolio • akhilesh</div>
+          <h1>AKHILESH</h1>
+          <p class="hero-sub">
+            also known as <span>akhyy</span> • video editing & shoots • Chhatrapati Sambhajinagar
+          </p>
+
+          <p class="hero-body">
+            I help creators & small brands make
+            <span class="highlight">clean, scroll-stopping videos</span>.
+            Reels, short-form content, YouTube clips, events – sab ka jugad hai,
+            bas idea leke aao.
+          </p>
+
+          <div class="tags-row">
+            <span class="tag">reels & short-form</span>
+            <span class="tag">video editing</span>
+            <span class="tag">basic shoots</span>
+            <span class="tag">content for creators</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/917218170719" target="_blank">
+              <span class="icon">✶</span>
+              <span>WhatsApp for inquiry</span>
+            </a>
+            <a class="btn btn-ghost" href="https://instagram.com/akhyy.works" target="_blank">
+              <span class="icon">◎</span>
+              <span>Instagram: @akhyy.works</span>
+            </a>
+          </div>
+
+          <div class="hero-footer">
+            <span>Based in Chhatrapati Sambhajinagar • Remote edits + local shoots</span>
+            <span>Call / WhatsApp: +91 7218170719</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- RIGHT: LOGO + INFO -->
+      <aside class="right-col">
+        <section class="logo-card">
+          <div class="logo-inner">
+            <!-- yahan tera logo -->
+            <img src="logo.jpg" alt="akhyy.works logo" />
+          </div>
+          <div class="logo-caption">
+            <span>Signature mark for akhyy.works</span>
+            <span style="opacity:0.85;">crafted by Akhilesh</span>
+          </div>
+        </section>
+
+        <section class="mini">
+          <div class="mini-title">what I do</div>
+          <p>
+            Short, punchy edits that feel smooth on mobile — perfect for Instagram,
+            YouTube Shorts & basic brand promos.
+          </p>
+          <div class="mini-tags">
+            <span class="mini-tag">reel cuts</span>
+            <span class="mini-tag">beat sync</span>
+            <span class="mini-tag">clean transitions</span>
+            <span class="mini-tag">colour & framing</span>
+          </div>
+        </section>
+
+        <section class="mini">
+          <div class="mini-title">connect</div>
+          <p>Pick whatever is easy for you:</p>
+          <div class="mini-tags">
+            <a class="mini-tag" href="https://instagram.com/akhyy.works" target="_blank">@akhyy.works</a>
+            <a class="mini-tag" href="https://instagram.com/akhiilleshhh" target="_blank">@akhiilleshhh</a>
+            <a class="mini-tag" href="tel:+917218170719">Call Akhilesh</a>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <!-- BOTTOM STRIP -->
+    <section class="bottom-grid">
+      <div class="strip">
+        <div>
+          <strong>For creators & small brands</strong><br />
+          Perfect if you want someone who actually understands hooks, pacing and
+          Instagram flow.
+        </div>
+        <div class="chip-soft">fast turnaround</div>
+      </div>
+
+      <div class="strip">
+        <div>
+          <strong>How we work</strong><br />
+          Share reference + raw clips → rough cut → feedback → final export ready
+          for Reels / Shorts.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> akhyy.works — Akhilesh</span>
+      <span>Built on iPhone with GitHub Pages.</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
